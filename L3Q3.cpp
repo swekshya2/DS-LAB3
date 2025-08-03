@@ -1,0 +1,38 @@
+ds lab 3q3
+  #include <iostream>
+using namespace std;
+
+bool implies(bool a, bool b) {
+    return (!a) || b;  // material implication
+}
+
+int main() {
+    cout << "G Y L | G?Y (G?Y)?L Y ¬L | AllPremises | ¬G | Valid?\n";
+    cout << "------------------------------------------------------\n";
+    for (int gi = 0; gi < 2; ++gi) {
+        for (int yi = 0; yi < 2; ++yi) {
+            for (int li = 0; li < 2; ++li) {
+                bool G = gi, Y = yi, L = li;
+                bool p1 = G || Y;
+                bool p2 = implies(G && Y, L);
+                bool p3 = Y;
+                bool p4 = !L;
+                bool all = p1 && p2 && p3 && p4;
+                bool concl = !G;
+                bool valid = !all || concl;
+
+                cout << (G ? 'T' : 'F') << " "
+                     << (Y ? 'T' : 'F') << " "
+                     << (L ? 'T' : 'F') << " |  "
+                     << (p1 ? 'T' : 'F') << "     "
+                     << (p2 ? 'T' : 'F') << "      "
+                     << (p3 ? 'T' : 'F') << "   "
+                     << (p4 ? 'T' : 'F') << "   |     "
+                     << (all ? 'T' : 'F') << "       |  "
+                     << (concl ? 'T' : 'F') << "   |   "
+                     << (valid ? 'T' : 'F') << "\n";
+            }
+        }
+    }
+    return 0;
+}
