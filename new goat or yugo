@@ -7,7 +7,7 @@ bool implies(bool a, bool b) {
 }
 
 int main() {
-    cout << "G Y L | G?Y (G?Y)?L Y ¬L | AllPremises | ¬G | Valid?\n";
+    cout << "G Y L | G?Y (G?Y)?L Y Â¬L | AllPremises | Â¬G | Valid?\n";
     cout << "------------------------------------------------------\n";
     for (int gi = 0; gi < 2; ++gi) {
         for (int yi = 0; yi < 2; ++yi) {
