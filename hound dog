@@ -2,11 +2,11 @@ ds lab3Q2
 #include <iostream>
 
 bool implies(bool a, bool b) {
-    return (!a) || b;  // a ? b is logically ¬a ? b
+    return (!a) || b;  // a ? b is logically Â¬a ? b
 }
 
 int main() {
-    std::cout << "P Q | P->Q ¬Q | Valid?\n";
+    std::cout << "P Q | P->Q Â¬Q | Valid?\n";
     std::cout << "----------------------\n";
     bool P, Q;
     for (int pi = 0; pi < 2; ++pi) {
